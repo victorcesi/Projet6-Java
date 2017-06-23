@@ -23,7 +23,7 @@ public class FrameTest {
 
 	@Before
 	public void setUp() throws Exception {	
-		this.frame = new Frame (null, 640, 500);
+		frame = new Frame (null, 640, 500);
 	}
 
 	@After
@@ -32,14 +32,8 @@ public class FrameTest {
 
 	@Test
 	public void testDysplay() {
-		final int expected = 1;
-        assertEquals(expected, this.frame.CreateDysplay);
-	}
-
-	public void testgetFrame() {
-		final int expected = 2;
-        assertEquals(expected, this.frame.getFrame());
-
+		final int expected = null;
+        assertnotnull(expected, frame.getframe());
 	}
 
 }
