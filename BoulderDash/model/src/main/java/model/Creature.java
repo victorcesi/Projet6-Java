@@ -10,7 +10,7 @@ import java.awt.Graphics;
  * This class will contain the bat ennemy which is an entity
  */
 
-public class Creature extends Entity {
+public class Creature  {
 	
 	public static final int DEFAULT_SPEED = (int) 3.0f;
 	
