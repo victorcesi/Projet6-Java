@@ -5,6 +5,7 @@ import java.awt.Image;
 import java.awt.image.BufferedImage;
 import java.awt.image.ImageObserver;
 import model.IMap;
+import model.IModel;
 import model.ITile;
 
 /**
@@ -20,6 +21,7 @@ public class GraphicsBuilder implements IGraphicsBuilder {
 	private static final Graphics Graphics = null;
 	private IMap map;
 	private ITile player;
+	private IModel model;
 	private char[][] mapTable;
 	private static Graphics g;
 	public int x;
@@ -31,10 +33,9 @@ public class GraphicsBuilder implements IGraphicsBuilder {
  * @param tab
  * @param map
  */
-	public GraphicsBuilder(char[][] tab, IMap map,ITile player){
+	public GraphicsBuilder(char[][] tab, IMap map, IModel model){
+		this.model = model;
 		this.map = map;
-		this.player = player;
-		drawPLayer(g, 4, 4, null);
 	}
 	
 
@@ -73,8 +74,12 @@ public class GraphicsBuilder implements IGraphicsBuilder {
 							 index = 4;
 							 break;
 							 
-						 /*default:
+						 case '5' :
+							 index = 5;
+							 break;
 							 
+						 /*case '9' : 
+							 index = 6;
 							 break;*/
 								
 								  }
@@ -86,9 +91,6 @@ public class GraphicsBuilder implements IGraphicsBuilder {
 		
 	}
 	
-public void drawPLayer(Graphics g, int x, int y, ImageObserver observer){
 
-	player.renderPlayer(g);
-}
 	
 }

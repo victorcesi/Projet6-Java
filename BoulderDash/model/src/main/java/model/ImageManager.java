@@ -9,7 +9,7 @@ import java.awt.image.BufferedImage;
  */
 public class ImageManager  {
 	private SpriteSheet ss;
-	public BufferedImage wallTile, sandTile, dirtTile, wallTileL2, sandTileL2, dirtTileL2, wallTileL3, sandTileL3, dirtTileL3, wallTileL4, sandTileL4, dirtTileL4, wallTileL5, sandTileL5, dirtTileL5;
+	public BufferedImage playerTile, wallTile, sandTile, dirtTile, wallTileL2, sandTileL2, dirtTileL2, wallTileL3, sandTileL3, dirtTileL3, wallTileL4, sandTileL4, dirtTileL4, wallTileL5, sandTileL5, dirtTileL5;
 	public BufferedImage[] player, playerRT, playerLT, stoneTile, diamonds, doorTile, ennemisTile, stoneTileL2, diamondsL2, doorTileL2, ennemisTileL2, stoneTileL3, diamondsL3, doorTileL3, ennemisTileL3, stoneTileL4, diamondsL4, doorTileL4, ennemisTileL4, stoneTileL5, diamondsL5, doorTileL5, ennemisTileL5;
 /**
  * Constructor of the class
@@ -38,10 +38,7 @@ public class ImageManager  {
 				break;
 		}
 		
-		player = new BufferedImage[3];
-		player[0] = ss.crop(0,0,16,16);
-		player[1] = ss.crop(0,0,16,16);
-		player[2] = ss.crop(0,0,16,16);
+
 		playerRT = new BufferedImage[3];
 		playerRT[0] = ss.crop(0,3,16,16);
 		playerRT[1] = ss.crop(1,3,16,16);
@@ -60,6 +57,9 @@ public class ImageManager  {
 	 * These methods will put all textures in a table of tile in order to draw the map
 	 */
 public void Level1(SpriteSheet ss){
+	
+	
+		playerTile = ss.crop(0,0,16,16);
 		wallTile = ss.crop(6, 0, 16, 16);
 		sandTile = ss.crop(7, 0, 16, 16);
 		dirtTile = ss.crop(8, 0, 16, 16);
@@ -92,6 +92,7 @@ public void Level1(SpriteSheet ss){
 		//textures level 2
 	public void Level2(SpriteSheet ss){
 		
+		playerTile = ss.crop(0,0,16,16);
 		wallTile = ss.crop(6, 4, 16, 16);
 		sandTile = ss.crop(7, 4, 16, 16);
 		dirtTile = ss.crop(8, 4, 16, 16);
@@ -125,6 +126,8 @@ public void Level1(SpriteSheet ss){
 		//textures level 3
 		
 	public void Level3 (SpriteSheet ss){
+		
+		playerTile = ss.crop(0,0,16,16);
 		wallTile = ss.crop(6, 8, 16, 16);
 		sandTile = ss.crop(7, 8, 16, 16);
 		dirtTile = ss.crop(8, 8, 16, 16);
@@ -161,6 +164,8 @@ public void Level1(SpriteSheet ss){
 		
 		
 public void Level4(SpriteSheet ss){
+	
+		playerTile = ss.crop(0,0,16,16);
 		wallTile = ss.crop(6, 12, 16, 16);
 		sandTile = ss.crop(7, 12, 16, 16);
 		dirtTile = ss.crop(8, 12, 16, 16);
@@ -196,6 +201,8 @@ public void Level4(SpriteSheet ss){
 		
 		
 	public void Level5(SpriteSheet ss){
+		
+		playerTile = ss.crop(0,0,16,16);
 		wallTile = ss.crop(6, 16, 16, 16);
 		sandTile = ss.crop(7, 16, 16, 16);
 		dirtTile = ss.crop(8, 16, 16, 16);

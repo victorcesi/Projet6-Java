@@ -24,11 +24,11 @@ public class Enemy{
 		
 		
 		
-		ennemisAnimation1 = new Animation(im.ennemisTileL1, 200);
+		//ennemisAnimation1 = new Animation(im.ennemisTileL1, 200);
 		
 		}
 	
-	public void tick(){
+	/*public void tick(){
 		
 	//j = (int) (Math.random() * 5 );   
 	//long start=System.nanoTime(); 
@@ -73,13 +73,13 @@ public class Enemy{
 	    		 j=2;
 	    	 }
 	     }
-	    
+	    */
 	    		
 	
 	
 	//this switch takes orientation decisions in function of the parameter j
 	//a is the horizontal axis and b the vertical axis
-	switch(j){
+	/*switch(j){
 	case 1:
 		b -= SPEED;	
 		break;
@@ -92,7 +92,7 @@ public class Enemy{
 	case 4 :
 			a += SPEED;
 		break;	
-	}
+	}*/
 	
 	
 	/*if(Game.getLevel().getTile((ao+xs+a)/ (16*Game.SCALE),(bo+ys+b)/ (16*Game.SCALE) ).isSolid()==true)
@@ -106,7 +106,7 @@ public class Enemy{
 	
 	
 
-move(xm, ym);	
+/*move(xm, ym);	
 
 	ennemisAnimation1.tick();
 	
@@ -162,9 +162,9 @@ move(xm, ym);
 	
 	
 
-	
+	*/
 }
 
-public class Enemy {
+/*public class Enemy {
 
-}
+}*/

@@ -1,6 +1,8 @@
 package model;
 
+import java.awt.Graphics;
 import java.awt.image.BufferedImage;
+import java.awt.image.ImageObserver;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
@@ -21,7 +23,8 @@ public class ModelFacade extends Observable implements IModel {
 	private BufferedImage image;
 	private ImageManager imageManager;
 	private ITile sand;
-	private ITile dirt, wall, stone, diamond;
+	private ITile dirt, wall, stone, diamond, player;
+	private  ArrayList<ITile> mobile;
 	//private final ArrayList<IEntity> mobiles;
 
     /**
@@ -30,7 +33,7 @@ public class ModelFacade extends Observable implements IModel {
      */
 	
     public ModelFacade() throws SQLException {
-        map = new Map(this);
+       // map = new Map(this);
       SpriteSheet ss = new SpriteSheet();
       imageManager = new ImageManager(ss, 1);
       
@@ -40,6 +43,7 @@ public class ModelFacade extends Observable implements IModel {
  	  wall = new WallTile(imageManager);
  	  stone = new StoneTile(imageManager);
  	  diamond = new DiamondTile(imageManager);
+ 	  player = new Player(imageManager);
  	 
     
     }
@@ -55,11 +59,7 @@ public class ModelFacade extends Observable implements IModel {
 
 
 
-	@Override
-	public void drawTexture(char c, ArrayList mobile) {
-		// TODO Auto-generated method stub
-		
-	}
+
 
 
 
@@ -68,7 +68,7 @@ public class ModelFacade extends Observable implements IModel {
 	@Override
 	public ArrayList putInArrayList() {
 		// TODO Auto-generated method stub
-		return null;
+		return mobile;
 	}
 
 
@@ -78,7 +78,7 @@ public class ModelFacade extends Observable implements IModel {
 	@Override
 	public ArrayList<ITile> getMobile() {
 		// TODO Auto-generated method stub
-		return null;
+		return mobile;
 	}
 
 
@@ -118,22 +118,13 @@ public class ModelFacade extends Observable implements IModel {
 	@Override
 	public char[][] getTab() {
 		// TODO Auto-generated method stub
-		return map.getTab();
+		return null;
 	}
 
 	@Override
 	public BufferedImage load(String path) {
 		// TODO Auto-generated method stub
 		return null;
-	}
-
-
-
-
-	@Override
-	public BufferedImage getTile() {
-
-		return imageManager.wallTile;
 	}
 
 
@@ -154,7 +145,6 @@ public class ModelFacade extends Observable implements IModel {
 @Override
 
 	public ITile getWall() {
-	System.out.println(wall);
 		return wall;
 	}
 
@@ -171,6 +161,27 @@ public class ModelFacade extends Observable implements IModel {
 	public ITile getDiamond() {
 		return diamond;
 	}
+
+@Override
+public ITile getPlayer() {
+	// TODO Auto-generated method stub
+	return player;
+}
+
+@Override
+public void render(Graphics g, int x, int y, ImageObserver observer) {
+	// TODO Auto-generated method stub
+	
+}
+
+
+
+
+
+
+
+
+
 
 
   

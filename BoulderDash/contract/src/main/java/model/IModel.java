@@ -1,6 +1,8 @@
 package model;
 
+import java.awt.Graphics;
 import java.awt.image.BufferedImage;
+import java.awt.image.ImageObserver;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
@@ -16,8 +18,6 @@ public interface IModel {
 
     
 	public char[][] transfoTab() throws SQLException;
-	
-	public void drawTexture(char c, ArrayList<ITile> mobile);
 	
 	public ArrayList putInArrayList();
 	
@@ -40,7 +40,6 @@ public interface IModel {
 	 * Get the tile
 	 * @return
 	 */
-	public BufferedImage getTile();
 	/**
 	 * Get the sandTile
 	 * @return
@@ -67,8 +66,11 @@ public interface IModel {
 	 */
 
 	public ITile getDiamond();
-
+	
+	public ITile getPlayer();
+	
+	public void render(Graphics g, int x, int y, ImageObserver observer);
 	
 	
-    
+	
 }

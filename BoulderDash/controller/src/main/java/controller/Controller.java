@@ -4,11 +4,11 @@ import java.awt.event.KeyEvent;
 import java.sql.SQLException;
 import java.util.List;
 
-
-import model.Example;
 import model.IModel;
-import model.Map;
 import view.IView;
+
+
+
 
 /**
  * <h1>The Class ControllerFacade provides a facade of the Controller component.</h1>

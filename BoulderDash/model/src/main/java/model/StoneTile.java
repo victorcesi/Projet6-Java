@@ -30,10 +30,16 @@ public class StoneTile extends Tile {
 	@Override
 	public void render(Graphics g, int x, int y, ImageObserver observer) {
 		// TODO Auto-generated method stub
-		StoneAnimation.render(g, x, y, 16,16);
+		StoneAnimation.render(g, x*16, y*16, 16,16);
 	}
 	public void tick(){
 		StoneAnimation.tick();
+	}
+	
+	@Override
+	public boolean imageUpdate(Image arg0, int arg1, int arg2, int arg3, int arg4, int arg5) {
+		// TODO Auto-generated method stub
+		return false;
 	}
 	
 	

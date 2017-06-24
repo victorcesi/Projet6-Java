@@ -12,11 +12,11 @@ import java.awt.Graphics;
 
 public class Creature  {
 	
-	public static final int DEFAULT_SPEED = (int) 3.0f;
+/*	public static final int DEFAULT_SPEED = (int) 3.0f;
 	
 	protected float speed;
 	protected float xMove;
-	protected float yMove;
+	protected float yMove;*/
 	
 	/**
 	 * Constructor of the class
@@ -26,7 +26,7 @@ public class Creature  {
 	 * @param height
 	 */
 	
-	public Creature(float x, float y, int width, int height) {
+	/*public Creature(float x, float y, int width, int height) {
 		super(x, y, width, height);
 		speed = DEFAULT_SPEED;
 		xMove = 0;
@@ -41,34 +41,34 @@ public class Creature  {
 	// getter setter
 	public float getxMove() {
 		return xMove;
-	}
+	}*/
 /**
  * 
  * @param xMove
  */
-	public void setxMove(float xMove) {
+	/*public void setxMove(float xMove) {
 		this.xMove = xMove;
 	}
 
 	public float getyMove() {
 		return yMove;
-	}
+	}*/
 /**
  * 
  * @param yMove
  */
-	public void setyMove(float yMove) {
+	/*public void setyMove(float yMove) {
 		this.yMove = yMove;
 	}
 
 	public float getSpeed() {
 		return speed;
-	}
+	}*/
 /**
  * 
  * @param speed
  */
-	public void setSpeed(float speed) {
+	/*public void setSpeed(float speed) {
 		this.speed = speed;
 	}
 
@@ -82,6 +82,6 @@ public class Creature  {
 	public void render(Graphics g) {
 		// TODO Auto-generated method stub
 		
-	}
+	}*/
 
 }

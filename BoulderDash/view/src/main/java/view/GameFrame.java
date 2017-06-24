@@ -9,6 +9,7 @@ import javax.swing.JFrame;
 
 import model.IMap;
 import model.IModel;
+import model.ITile;
 
 
 /**
@@ -26,7 +27,7 @@ public class GameFrame extends JFrame  {
 
 	private JFrame frame;
 	private GraphicsBuilder graphicsBuilder;
-	
+	private ITile player;
 	private final IModel model;
 	
 	private String title;
@@ -43,15 +44,14 @@ public class GameFrame extends JFrame  {
 		frame = new  JFrame(title);	
 		this.model = model;
 		char[][] tab = model.getTab();
-		GraphicsBuilder graphicsBuilder = new GraphicsBuilder(tab, map);
+		GraphicsBuilder graphicsBuilder = new GraphicsBuilder(tab, map,model);
 		 	
 		  
-	        frame.setSize(640, 640);
+	        frame.setSize(660, 640);
 	        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	        frame.setResizable(false);
 	        //frame.addKeyListener((KeyListener) frame);
 	        frame.setLocationRelativeTo(null);
-	        
 	        final Panel panel = new Panel(graphicsBuilder);
 	        panel.setDoubleBuffered(true);
 	        //observable.addObserver(panel);

@@ -10,15 +10,17 @@ import java.sql.SQLException;
 import controller.Controller;
 import controller.IController;
 import model.IModel;
+import model.ITile;
 import model.ImageLoader;
 import model.ModelFacade;
+import model.Player;
 import model.SpriteSheet;
 import view.GameFrame;
 import view.IView;
 import view.Panel;
 import view.ViewFacade;
 import model.Map;
-
+import model.ImageManager;
 
 /**
  * <h1> the Class Main.</h1>
@@ -29,6 +31,7 @@ import model.Map;
 
 public abstract class Main {
 	private static BufferedImage spriteSheet;
+
 	
 	public void init(){
 
@@ -43,28 +46,15 @@ public abstract class Main {
      */
     public static void main(final String[] args) throws SQLException {
     	
-
-
-		
-    
-    	
     IModel model = new ModelFacade();
+    
+
     
     //IController controller = new Controller();
     
-    IView view = new ViewFacade("BoulderDash", model, null, new Map(model));
-    	
-        /*final ControllerFacade controller = new ControllerFacade(new ViewFacade(), new ModelFacade());
-        
+    ImageManager im = null;
+	IView view = new ViewFacade("BoulderDash", model, null, new Map(model));
 
-        try {
-
-            controller.start();
-
-
-        } catch (final SQLException exception) {
-            exception.printStackTrace();
-        }*/
         
     }
 }

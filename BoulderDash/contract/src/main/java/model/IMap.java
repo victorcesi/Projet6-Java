@@ -6,8 +6,6 @@ import java.util.ArrayList;
 public interface IMap extends IModel {
 	public char[][] transfoTab() throws SQLException;
 	
-	public void drawTexture(char c, ArrayList<ITile> mobile);
-	
 	public ArrayList<ITile> putInArrayList();
 	
 	public ArrayList<ITile> getMobile();

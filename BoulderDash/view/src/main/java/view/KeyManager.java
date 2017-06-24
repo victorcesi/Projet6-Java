@@ -8,7 +8,7 @@ public class KeyManager extends Panel implements KeyListener, IkeyManager{
 	private boolean[] keys;
 	
 	public KeyManager(String title, int width, int height) {
-		super(title, width, height);
+		super(null);
 		// TODO Auto-generated constructor stub
 	}
 	@Override

@@ -1,9 +1,10 @@
 package model;
 
+import java.awt.Graphics;
 import java.awt.image.BufferedImage;
+import java.awt.image.ImageObserver;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.List;
 
 import model.dao.MapDAO;
 
@@ -26,15 +27,14 @@ public class Map implements IMap {
 	 */
 
 	public Map(IModel model) throws SQLException{
-		this.model = model;
 		this.mobile = new ArrayList<ITile>();
+		this.model = model;
+		
 		this.putInArrayList();
 		this.transfoTab();
 	}
 
-	public ArrayList<ITile> getMobile() {
-		return mobile;
-	}
+
 
 	public static int WIDTH = 40;
 	public static int HEIGTH = 30;
@@ -46,8 +46,7 @@ public class Map implements IMap {
 	 * @throws SQLException
 	 */
 	public char[][] transfoTab() throws SQLException{
-		  String resultat = MapDAO.readInDB(1);
-		  
+		  String resultat = MapDAO.readInDB(2);
 		  for(int i=0; i<40; i++){
 			  for(int j=0; j<30; j++){
 				  c =  resultat.charAt(i+j*40);
@@ -65,42 +64,7 @@ public class Map implements IMap {
 	 * @param c This is the value of the character
 	 * @return This returns a Sand Tile if there is no character
 	 */
-	public  void drawTexture(char c, ArrayList<ITile> mobile){
-		
-		
-		switch (c){
-		 
-		 case '0': 
-			 mobile.get(0);
-			 break;
-			 
-		 case '1':
-			 mobile.get(1);
-			 break;
-			
-			 
-		 case '2':
-			 mobile.get(2);
-			 break;
-			 
-			
-		 case '3':
-			 mobile.get(3);
-			 break;
-			 
-				 
-		 case '4':
-			 mobile.get(4);
-			 break;
-			 
-		 default:
-			 mobile.get(1);
-			 break;
-				
-				  }
-		
-		
-			  }
+
 	
 	/**
 	 * @return
@@ -113,9 +77,19 @@ public class Map implements IMap {
 		 mobile.add(2,model.getDirt());
 		 mobile.add(3,model.getStone());
 		 mobile.add(4,model.getDiamond());
+		 mobile.add(5,model.getPlayer());
+		 
+
 		 
 		return mobile;
 		
+	}
+	/**
+	 * @return
+	 * 			return the mobile
+	 */
+	public ArrayList<ITile> getMobile() {
+		return mobile;
 	}
 /**
  * @return
@@ -157,11 +131,7 @@ public class Map implements IMap {
 		return null;
 	}
 
-	@Override
-	public BufferedImage getTile() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+
 
 	@Override
 	public ITile getSand() {
@@ -192,6 +162,24 @@ public class Map implements IMap {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+	@Override
+	public void render(Graphics g, int x, int y, ImageObserver observer) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public ITile getPlayer() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+
+	
+
+
 		 
 	}
 
