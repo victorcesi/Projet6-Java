@@ -18,7 +18,7 @@ import model.dao.MapDAO;
  * @author Alexandre DASSONVILLE
  * @version 4.6.3
  */
-public class ModelFacade extends Observable implements IModel {
+public class ModelFacade extends Observable implements IModel, IMovable {
 	private Map map;
 	private BufferedImage image;
 	private ImageManager imageManager;
@@ -162,16 +162,42 @@ public class ModelFacade extends Observable implements IModel {
 		return diamond;
 	}
 
-@Override
+
 public ITile getPlayer() {
-	// TODO Auto-generated method stub
 	return player;
 }
 
 @Override
 public void render(Graphics g, int x, int y, ImageObserver observer) {
-	// TODO Auto-generated method stub
 	
+}
+
+
+@Override
+public boolean isRight() {
+	// TODO Auto-generated method stub
+	return false;
+}
+
+
+@Override
+public boolean isDown() {
+	// TODO Auto-generated method stub
+	return false;
+}
+
+
+@Override
+public boolean isUp() {
+	// TODO Auto-generated method stub
+	return false;
+}
+
+
+@Override
+public boolean isLeft() {
+	// TODO Auto-generated method stub
+	return false;
 }
 
 

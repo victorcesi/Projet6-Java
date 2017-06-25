@@ -9,6 +9,7 @@ import java.sql.SQLException;
 
 import controller.Controller;
 import controller.IController;
+import controller.IEventPerformer;
 import model.IModel;
 import model.ITile;
 import model.ImageLoader;
@@ -53,7 +54,7 @@ public abstract class Main {
     //IController controller = new Controller();
     
     ImageManager im = null;
-	IView view = new ViewFacade("BoulderDash", model, null, new Map(model));
+	IView view = new ViewFacade("BoulderDash", model, null, new Map(model), null);
 
         
     }

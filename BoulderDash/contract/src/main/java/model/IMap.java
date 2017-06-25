@@ -18,4 +18,6 @@ public interface IMap extends IModel {
 	
 	char[][] getTab();
 
+	ITile getPlayer();
+
 }

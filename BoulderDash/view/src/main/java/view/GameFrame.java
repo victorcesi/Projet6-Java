@@ -7,6 +7,7 @@ import java.util.Observable;
 
 import javax.swing.JFrame;
 
+import controller.IController;
 import model.IMap;
 import model.IModel;
 import model.ITile;
@@ -21,7 +22,7 @@ import model.ITile;
  */
 
 
-public class GameFrame extends JFrame  {
+public class GameFrame extends JFrame implements KeyListener  {
 
 	private static final long serialVersionUID = 3880460175055587876L;
 
@@ -32,6 +33,7 @@ public class GameFrame extends JFrame  {
 	
 	private String title;
 	private int width, height;
+	private EventPerformerable eventPerformer;
 	
 	/**
 	 * Constructor of the class
@@ -40,17 +42,19 @@ public class GameFrame extends JFrame  {
 	 * @param observable
 	 * @param map
 	 */
-	public GameFrame(final String title,IModel model,  final Observable observable, IMap map){
+	public GameFrame(final String title,IModel model,  final Observable observable, IMap map, EventPerformerable eventPerformer){
 		frame = new  JFrame(title);	
 		this.model = model;
+		this.eventPerformer = eventPerformer;
 		char[][] tab = model.getTab();
+		 frame.addKeyListener(this);
 		GraphicsBuilder graphicsBuilder = new GraphicsBuilder(tab, map,model);
 		 	
 		  
 	        frame.setSize(660, 640);
 	        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	        frame.setResizable(false);
-	        //frame.addKeyListener((KeyListener) frame);
+	       
 	        frame.setLocationRelativeTo(null);
 	        final Panel panel = new Panel(graphicsBuilder);
 	        panel.setDoubleBuffered(true);
@@ -59,7 +63,21 @@ public class GameFrame extends JFrame  {
 	        frame.setVisible(true);
 
 	}
-	
+	@Override
+	public void keyPressed(KeyEvent keyEvent) {
+		this.eventPerformer.eventPerform(keyEvent);
+
+	}
+	@Override
+	public void keyReleased(KeyEvent e) {
+		
+		
+	}
+	@Override
+	public void keyTyped(KeyEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
 
 /**
  * 

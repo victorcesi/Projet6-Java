@@ -69,6 +69,7 @@ public interface IModel {
 	
 	public ITile getPlayer();
 	
+	
 	public void render(Graphics g, int x, int y, ImageObserver observer);
 	
 	

@@ -13,6 +13,8 @@ import java.awt.image.ImageObserver;
  */
 public class WallTile extends Tile implements ImageObserver {
 	private ImageManager im;
+	
+	private final char TILE_NUMBER = '0';
 	/**
 	 * Constructor of the class
 	 * @param im

@@ -24,6 +24,7 @@ public class Controller implements IController {
     /** The model. */
     private final IModel model;
     
+ 
   
 
     /**
@@ -73,5 +74,6 @@ public class Controller implements IController {
     public IModel getModel() {
         return this.model;
     }
+
 
 }

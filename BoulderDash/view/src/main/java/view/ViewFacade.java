@@ -6,6 +6,8 @@ import java.util.Observer;
 
 import javax.swing.JOptionPane;
 
+import controller.IController;
+import controller.IEventPerformer;
 import model.IMap;
 import model.IModel;
 import model.ITile;
@@ -22,16 +24,16 @@ import model.ITile;
 public class ViewFacade implements IView, Runnable {
 	
 	IModel model;
-	
+	private EventPerformer eventPerformer;
 	
 
     /**
      * Instantiates a new view facade.
      */
-    public ViewFacade(String title, IModel model, Observable observer, IMap map) {
+    public ViewFacade(String title, IModel model, Observable observer, IMap map, IEventPerformer orderPerformer) {
     	this.model = model;
-    	
-    	GameFrame frame = new GameFrame(title,model, observer, map);
+    	this.eventPerformer = new EventPerformer(orderPerformer);
+    	GameFrame frame = new GameFrame(title,model, observer, map, eventPerformer);
     }
 
     /*
@@ -50,19 +52,31 @@ public class ViewFacade implements IView, Runnable {
 	}
 
 	@Override
-	public void keyPressed(KeyEvent e) {
+	public void keyPressed(KeyEvent keyEvent) {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void keyReleased(KeyEvent e) {
+	public void keyReleased(KeyEvent keyEvent) {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void keyTyped(KeyEvent e) {
+	public void keyTyped(KeyEvent keyEvent) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void closeWindow() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void drawScore(int score) {
 		// TODO Auto-generated method stub
 		
 	}

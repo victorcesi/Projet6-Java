@@ -9,7 +9,5 @@ import java.awt.event.KeyEvent;
  * @version 1.0
  */
 public interface IController  {
-
-
 	
 }
