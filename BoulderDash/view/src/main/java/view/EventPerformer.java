@@ -15,7 +15,7 @@ public class EventPerformer implements EventPerformerable {
 	}
 	
 	public void eventPerform(KeyEvent keyCode){
-		IUserOrder userOrder = this.keyCodeToUserOrder (keyCode.getKeyCode());
+		IUserOrder userOrder = this.keyCodeToUserOrder(keyCode.getKeyCode());
 		if(userOrder != null){
 			this.orderPerformer.orderPerform(userOrder);
 		}

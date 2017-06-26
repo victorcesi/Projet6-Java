@@ -20,4 +20,5 @@ public interface IMap extends IModel {
 
 	ITile getPlayer();
 
+	void setTab(char tile, int x, int y);
 }

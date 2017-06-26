@@ -3,7 +3,7 @@ package model;
 import java.awt.image.BufferedImage;
 /**
  * 
- * @author Aurélien POTTIER
+ * @author Aurï¿½lien POTTIER
  * @version 4.6.3
  * 
  * This class will get the path to access to all the textures which will be stored in ImageManager class
@@ -15,7 +15,7 @@ public class SpriteSheet {
 	public SpriteSheet(){
 
 		ImageLoader loader = new ImageLoader();
-		sheet = loader.load("C:\\Users\\Neros Fast\\git\\Projet-java\\BoulderDash-BaseProject\\BoulderDash\\model\\ressources\\SpriteSheet.png");
+		sheet = loader.load("C:\\Users\\Neros Fast\\git\\Projet6-Java\\BoulderDash\\model\\ressources\\SpriteSheet.png");
 	}
 	/**
 	 * 

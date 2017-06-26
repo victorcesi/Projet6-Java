@@ -1,79 +1,108 @@
 package controller;
 
-import java.awt.event.KeyEvent;
-import java.sql.SQLException;
-import java.util.List;
-
+import model.Direction;
 import model.IModel;
-import view.IView;
+import model.ITile;
+import model.ImageManager;
 
+import java.sql.SQLException;
 
+public class Controller implements IController, IEventPerformer {
 
-
-/**
- * <h1>The Class ControllerFacade provides a facade of the Controller component.</h1>
- *
- * @author Jean-Aymeric DIET jadiet@cesi.fr
- * @version 1.0
- */
-public class Controller implements IController {
-
-    /** The view. */
-    private final IView  view;
-
-    /** The model. */
     private final IModel model;
-    
- 
-  
+    private ITile player;
 
-    /**
-     * Instantiates a new controller facade.
-     *
-     * @param view
-     *            the view
-     * @param model
-     *            the model
-     * @throws SQLException 
-     */
-    public Controller(final IView view, final IModel model) throws SQLException {
-        super();
-        this.view = view;
+    public Controller(IModel model) {
         this.model = model;
-        this.model.transfoTab();
-        
+        player = this.model.getPlayer();
     }
 
-    /**
-     * Start.
-     *
-     * @throws SQLException
-     *             the SQL exception
-     */
-    public void start() throws SQLException {
-    	
+    public void orderPerform(IUserOrder userOrder) {
+        if (userOrder != null) {
+            Direction direction = null;
+
+            char[][] tiles = model.getMap().getTab();
+
+            System.out.println(tiles[player.getX()][player.getY()]);
+
+            switch (userOrder.getOrder()) {
+                case UP:
+                    direction = Direction.UP;
+
+                    switch (tiles[player.getX()][player.getY() - 1]) {
+                        case '0':
+                        case '3':
+                            break;
+
+                        case '1':
+                            model.getMap().setTab('2', player.getX(), player.getY() - 1);
+                        default:
+                            player.setY(player.getY() - 1);
+                            break;
+                    }
+
+                    break;
+                case DOWN:
+                    direction = Direction.DOWN;
+
+                    switch (tiles[player.getX()][player.getY() + 1]) {
+                        case '0':
+                        case '3':
+                            break;
+
+                        case '1':
+                            model.getMap().setTab('2', player.getX(), player.getY() + 1);
+                        default:
+                            player.setY(player.getY() + 1);
+                            break;
+                    }
+
+                    break;
+                case LEFT:
+                    direction = Direction.LEFT;
+
+                    switch (tiles[player.getX() - 1][player.getY()]) {
+                        case '0':
+                        case '3':
+                            break;
+
+                        case '1':
+                            model.getMap().setTab('2', player.getX() - 1, player.getY());
+                        default:
+                            player.setX(player.getX() - 1);
+                            break;
+                    }
+
+                    break;
+                case RIGHT:
+                    direction = Direction.RIGHT;
+
+                    switch (tiles[player.getX() + 1][player.getY()]) {
+                        case '0':
+                        case '3':
+                            break;
+
+                        case '1':
+                            model.getMap().setTab('2', player.getX() + 1, player.getY());
+                        default:
+                            player.setX(player.getX() + 1);
+                            break;
+                    }
+
+                    break;
+                case NOP:
+                    System.exit(0);
+                    break;
+            }
+            model.getPlayer().setDirection(direction);
+
+            manageCollision();
+        }
     }
-    
 
-    
+    private void manageCollision() {
+        switch (player.getDirection()) {
 
-    /**
-     * Gets the view.
-     *
-     * @return the view
-     */
-    public IView getView() {
-        return this.view;
+        }
     }
-
-    /**
-     * Gets the model.
-     *
-     * @return the model
-     */
-    public IModel getModel() {
-        return this.model;
-    }
-
-
 }

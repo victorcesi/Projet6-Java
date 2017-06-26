@@ -17,17 +17,17 @@ public interface IModel {
 
 
     
-	public char[][] transfoTab() throws SQLException;
+	char[][] transfoTab() throws SQLException;
 	
-	public ArrayList putInArrayList();
+	ArrayList putInArrayList();
 	
-	public ArrayList<ITile> getMobile();
+	ArrayList<ITile> getMobile();
 	
-	public void setHEIGTH(int HEIGTH);
+	void setHEIGTH(int HEIGTH);
 	
-	public int getHEIGTH();
+	int getHEIGTH();
 	
-	public void setWIDTH(int WIDTH) ;
+	void setWIDTH(int WIDTH) ;
 	
 	/**
 	 * Get the char table
@@ -35,7 +35,7 @@ public interface IModel {
 	 */
 	char[][] getTab();
 	
-	public BufferedImage load(String path);
+	BufferedImage load(String path);
 	/**
 	 * Get the tile
 	 * @return
@@ -44,34 +44,34 @@ public interface IModel {
 	 * Get the sandTile
 	 * @return
 	 */
-	public ITile getSand();
+	ITile getSand();
 	/**
 	 * Get the dirtTile
 	 * @return
 	 */
-	public ITile getDirt();
+	ITile getDirt();
 	/**
 	 * Get the wallTile
 	 * @return
 	 */
-	public ITile getWall();
+	ITile getWall();
 	/**
 	 * Get the stoneTile
 	 * @return
 	 */
-	public ITile getStone();
+	ITile getStone();
 	/**
 	 * Get the diamondTile
 	 * @return
 	 */
 
-	public ITile getDiamond();
+	ITile getDiamond();
 	
-	public ITile getPlayer();
-	
-	
-	public void render(Graphics g, int x, int y, ImageObserver observer);
+	ITile getPlayer();
 	
 	
+	void render(Graphics g, int x, int y, ImageObserver observer);
+	
+	IMap getMap();
 	
 }

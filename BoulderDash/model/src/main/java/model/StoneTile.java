@@ -41,7 +41,36 @@ public class StoneTile extends Tile {
 		// TODO Auto-generated method stub
 		return false;
 	}
-	
-	
+
+	@Override
+	public void setDirection(Direction direction) {
+
+	}
+
+	@Override
+	public Direction getDirection() {
+		return null;
+	}
+
+	@Override
+	public void setX(int x) {
+
+	}
+
+	@Override
+	public int getX() {
+		return 0;
+	}
+
+	@Override
+	public void setY(int y) {
+
+	}
+
+	@Override
+	public int getY() {
+		return 0;
+	}
+
 
 }

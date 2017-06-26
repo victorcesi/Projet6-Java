@@ -30,7 +30,36 @@ public class DirtTile extends Tile implements ImageObserver{
 	public boolean imageUpdate(Image arg0, int arg1, int arg2, int arg3, int arg4, int arg5) {
 		return false;
 	}
-	
-	
-	
+
+	@Override
+	public void setDirection(Direction direction) {
+
+	}
+
+	@Override
+	public Direction getDirection() {
+		return null;
+	}
+
+	@Override
+	public void setX(int x) {
+
+	}
+
+	@Override
+	public int getX() {
+		return 0;
+	}
+
+	@Override
+	public void setY(int y) {
+
+	}
+
+	@Override
+	public int getY() {
+		return 0;
+	}
+
+
 }

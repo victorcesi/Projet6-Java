@@ -46,6 +46,8 @@ public class Panel extends JPanel implements Observer{
 	public void paintComponent(Graphics g){
 		
 		this.graphicsBuilder.applyModelToGraphic(g, this);
+		this.graphicsBuilder.drawPlayer(g, this);
+		repaint();
 		
 	}
 
